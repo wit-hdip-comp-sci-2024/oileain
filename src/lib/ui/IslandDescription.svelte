@@ -3,5 +3,5 @@
 </script>
 
 <section class="section">
-  {@html island.description}
+  {@html island?.description}
 </section>
