@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Icon from "@iconify/svelte";
+  import Icon from '@iconify/svelte';
 </script>
 
 <div class="columns is-vcentered">
@@ -9,7 +9,7 @@
         <Icon icon="mdi:sun-compass" width="64" />
       </div>
       <div class="column">
-        <div class="title">Oileain: islands of Ireand</div>
+        <div class="title">Oileain: islands of Ireland</div>
       </div>
     </div>
   </div>
