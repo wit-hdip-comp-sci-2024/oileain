@@ -9,7 +9,7 @@
     </summary>
     <div>
       {#each coast.pois as island}
-        <a href="/navigator/{island.safeName}"> {@html island.name}</a>
+        <a href="/poi/{island.safeName}"> {@html island.name}</a>
       {/each}
     </div>
   </details>
