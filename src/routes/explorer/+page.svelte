@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { currentIsland, markerSelected } from '$lib/runes.svelte';
+  import { currentIsland, currentView, markerSelected } from '$lib/runes.svelte';
   import { oileainService } from '$lib/services/oileain-service';
   import { generateMarkerSpec } from '$lib/services/oileain-utils';
   import IslandDescription from '$lib/ui/IslandDescription.svelte';
@@ -8,6 +8,8 @@
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
   let navigator: LeafletMap;
+
+  currentView.value = 'Explorer';
 
   $effect(() => {
     if (markerSelected.value) {

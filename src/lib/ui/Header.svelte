@@ -1,6 +1,6 @@
 <script lang="ts">
   import Icon from '@iconify/svelte';
-  import { currentIsland } from '$lib/runes.svelte';
+  import { currentIsland, currentView } from '$lib/runes.svelte';
 </script>
 
 <div class="columns is-vcentered">
@@ -10,7 +10,7 @@
         <Icon icon="mdi:sun-compass" width="64" />
       </div>
       <div class="column">
-        <div class="title">Oileain: islands of Ireland</div>
+        <div class="title">Oileain: islands of Ireland : {currentView.value}</div>
         {#if currentIsland.value}
           {@html currentIsland.value.nameHtml}
         {:else}

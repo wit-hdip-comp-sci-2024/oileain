@@ -3,3 +3,4 @@ import type { Island } from './services/oileain-types';
 
 export const markerSelected = $state({ value: null as MarkerSpec | null });
 export const currentIsland = $state({ value: null as Island | null });
+export const currentView = $state({ value: 'Home: ' });

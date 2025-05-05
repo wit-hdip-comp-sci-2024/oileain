@@ -4,13 +4,14 @@
   import LeafletMap from '$lib/ui/LeafletMap.svelte';
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
-  import { currentIsland } from '$lib/runes.svelte';
+  import { currentIsland, currentView } from '$lib/runes.svelte';
   import { oileainService } from '$lib/services/oileain-service';
   import { page } from '$app/state';
   import { generateMarkerSpec } from '$lib/services/oileain-utils';
 
   let mapTerrain: LeafletMap;
   currentIsland.value = data.island;
+  currentView.value = 'Wanderer';
 
   $effect(() => {
     oileainService.getIslandById(page.params.id).then((result) => {

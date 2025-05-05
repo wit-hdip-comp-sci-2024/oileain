@@ -3,7 +3,7 @@
   import { goto } from '$app/navigation';
   import LeafletMap from '$lib/ui/LeafletMap.svelte';
   import IslandDescription from '$lib/ui/IslandDescription.svelte';
-  import { currentIsland, markerSelected } from '$lib/runes.svelte';
+  import { currentIsland, currentView, markerSelected } from '$lib/runes.svelte';
   import type { MarkerSpec } from '$lib/services/markers';
   import type { PageProps } from './$types';
 
@@ -11,6 +11,8 @@
   let mapTerrain: LeafletMap;
   let mapSat: LeafletMap;
   let mapContext: LeafletMap;
+
+  currentView.value = 'Navigator';
 
   async function zoomTo(marker: MarkerSpec) {
     await mapTerrain?.addPopupMarkerAndZoom('selected', marker);
