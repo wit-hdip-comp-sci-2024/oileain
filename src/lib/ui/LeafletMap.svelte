@@ -100,6 +100,8 @@
   }
 
   export async function moveTo(location: any, zoom: number = 0) {
+    const leaflet = await import('leaflet');
+    L = leaflet.default;
     if (zoom == 0) {
       imap.flyTo(location);
     } else {
