@@ -11,7 +11,6 @@
   let mapTerrain: LeafletMap;
   let mapSat: LeafletMap;
   let mapContext: LeafletMap;
-
   currentView.value = 'Navigator';
 
   async function zoomTo(marker: MarkerSpec) {
