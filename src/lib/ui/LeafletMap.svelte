@@ -20,13 +20,6 @@
     } as MarkerSpec
   } = $props();
 
-  // let { height = 80 } = $props();
-  // let id = "home-map-id";
-  // let location = { lat: 53.2734, lng: -7.7783203 };
-  // let zoom = 8;
-  // let minZoom = 7;
-  // let activeLayer = "Terrain";
-
   let imap: LeafletMap;
   let control: Control.Layers;
   let overlays: Control.LayersObject = {};
@@ -75,17 +68,13 @@
   });
 
   export async function addPopupMarkerAndZoom(layer: string, marker: MarkerSpec) {
-    const leaflet = await import('leaflet');
-    L = leaflet.default;
     if (imap) {
       addPopup(layer, marker.title, marker.location);
       moveTo(marker.location, 15);
     }
   }
 
-  async function addPopup(layerTitle: string, content: string, location: LatLng) {
-    const leaflet = await import('leaflet');
-    L = leaflet.default;
+  async function addPopup(layerTitle: string, content: string, location: any) {
     let popupGroup: LayerGroup;
     if (!overlays[layerTitle]) {
       popupGroup = L.layerGroup([]);
@@ -104,8 +93,6 @@
   }
 
   export async function addMarker(lat: number, lng: number, popupText: string) {
-    const leaflet = await import('leaflet');
-    L = leaflet.default;
     const marker = L.marker([lat, lng]).addTo(imap);
     const popup = L.popup({ autoClose: false, closeOnClick: false });
     popup.setContent(popupText);
@@ -113,8 +100,6 @@
   }
 
   export async function moveTo(location: any, zoom: number = 0) {
-    const leaflet = await import('leaflet');
-    L = leaflet.default;
     if (zoom == 0) {
       imap.flyTo(location);
     } else {
